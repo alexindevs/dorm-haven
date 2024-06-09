@@ -6,6 +6,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 
 export type AccountDocument = HydratedDocument<Account>;
+export type RefreshTokenDocument = HydratedDocument<RefreshToken>;
 
 @Schema()
 export class Account {
@@ -28,4 +29,14 @@ export class Account {
   // profile: Profile;
 }
 
+@Schema()
+export class RefreshToken {
+  @Prop({ required: true })
+  token: string;
+
+  @Prop({ required: true })
+  user_id: string;
+}
+
 export const AccountSchema = SchemaFactory.createForClass(Account);
+export const RefreshTokenSchema = SchemaFactory.createForClass(RefreshToken);
