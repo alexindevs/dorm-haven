@@ -4,7 +4,7 @@ import 'winston-mongodb';
 const environment = process.env.NODE_ENV || 'development';
 const dbInstance =
   environment == 'development'
-    ? 'mongodb://localhost:27017/panic-alerts-dev'
+    ? 'mongodb://localhost:27017/dorm-haven'
     : process.env.MONGO_PROD_INSTANCE;
 
 const prodLogger = winston.createLogger({
