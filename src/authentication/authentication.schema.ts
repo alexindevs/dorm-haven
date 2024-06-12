@@ -10,19 +10,23 @@ export type RefreshTokenDocument = HydratedDocument<RefreshToken>;
 
 @Schema()
 export class Account {
-  @Prop()
+  @Prop({ required: true, unique: true })
   email: string;
 
-  @Prop()
+  @Prop({ required: true })
   password: string;
 
-  @Prop()
+  @Prop({ required: true, unique: true })
   username: string;
 
-  @Prop()
+  @Prop({
+    enum: ['student', 'non-student', 'admin'],
+    required: true,
+    default: 'student',
+  })
   role: string;
 
-  @Prop()
+  @Prop({ default: false })
   verified: boolean;
 
   // @Prop()
