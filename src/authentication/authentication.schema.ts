@@ -4,6 +4,7 @@
 
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
+import { Profile } from 'src/profile/profile.schema';
 
 export type AccountDocument = HydratedDocument<Account>;
 export type RefreshTokenDocument = HydratedDocument<RefreshToken>;
@@ -29,8 +30,8 @@ export class Account {
   @Prop({ default: false })
   verified: boolean;
 
-  // @Prop()
-  // profile: Profile;
+  @Prop()
+  profile: Profile;
 }
 
 @Schema()

@@ -190,4 +190,12 @@ export class AuthenticationService {
       data: null,
     };
   }
+
+  async getProfileByUserId(userId: mongoose.Types.ObjectId) {
+    return await this.accountModel.findOne({ _id: userId }).populate('profile');
+  }
+
+  async getUserById(userId: mongoose.Types.ObjectId) {
+    return await this.accountModel.findById(userId);
+  }
 }
