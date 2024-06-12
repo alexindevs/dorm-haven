@@ -6,6 +6,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ProfileModule } from './profile/profile.module';
 import { UserPreferencesService } from './user-preferences/user-preferences.service';
 import { PostsModule } from './posts/posts.module';
+import { ChatService } from './chat/chat.service';
+import { ChatModule } from './chat/chat.module';
 
 @Module({
   imports: [
@@ -13,8 +15,9 @@ import { PostsModule } from './posts/posts.module';
     AuthenticationModule,
     ProfileModule,
     PostsModule,
+    ChatModule,
   ],
   controllers: [AppController],
-  providers: [AppService, UserPreferencesService],
+  providers: [AppService, UserPreferencesService, ChatService],
 })
 export class AppModule {}
