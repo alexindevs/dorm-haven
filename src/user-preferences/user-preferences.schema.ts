@@ -16,6 +16,40 @@ enum noiseTolerance {
   LOUD = 'loud',
 }
 
+enum PersonalityTraits {
+  OUTGOING = 'outgoing',
+  FRIENDLY = 'friendly',
+  INTROVERTED = 'introverted',
+  KIND = 'kind',
+  AMBITIOUS = 'ambitious',
+  ADVENTUROUS = 'adventurous',
+  CREATIVE = 'creative',
+  DISCIPLINED = 'disciplined',
+  OPTIMISTIC = 'optimistic',
+  PESSIMISTIC = 'pessimistic',
+  HUMOROUS = 'humorous',
+  SERIOUS = 'serious',
+  COMPASSIONATE = 'compassionate',
+  EMPATHETIC = 'empathetic',
+  PATIENT = 'patient',
+  IMPULSIVE = 'impulsive',
+  RESOURCEFUL = 'resourceful',
+  ENTHUSIASTIC = 'enthusiastic',
+  DILIGENT = 'diligent',
+  RELIABLE = 'reliable',
+  CHARISMATIC = 'charismatic',
+  ANALYTICAL = 'analytical',
+  ASSERTIVE = 'assertive',
+  FLEXIBLE = 'flexible',
+  HONEST = 'honest',
+  LOYAL = 'loyal',
+  INNOVATIVE = 'innovative',
+  PRAGMATIC = 'pragmatic',
+  SELF_DISCIPLINED = 'self-disciplined',
+  SOCIABLE = 'sociable',
+  TOLERANT = 'tolerant',
+}
+
 enum roomType {
   SELF_CON = 'Self Contained Apartment',
   ROOM_Parlor = 'Room and Parlor',
@@ -76,14 +110,15 @@ export class UserPreferences {
     type: {
       gender: String,
       age: [Number],
-      personality_traits: [String],
+      personality_traits: [PersonalityTraits],
       interests: [String],
     },
   })
   personal_preferences: {
     gender: string;
     age: number[];
-    personality_traits: string[];
+    preferred_personality_traits: PersonalityTraits[];
+    my_personality_traits: PersonalityTraits[];
     interests: string[];
   };
 

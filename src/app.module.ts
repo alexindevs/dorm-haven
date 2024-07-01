@@ -8,6 +8,7 @@ import { UserPreferencesService } from './user-preferences/user-preferences.serv
 import { PostsModule } from './posts/posts.module';
 import { ChatService } from './chat/chat.service';
 import { ChatModule } from './chat/chat.module';
+import { RecommendationEngineModule } from './recommendation-engine/recommendation-engine.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { ChatModule } from './chat/chat.module';
     ProfileModule,
     PostsModule,
     ChatModule,
+    RecommendationEngineModule,
   ],
   controllers: [AppController],
   providers: [AppService, UserPreferencesService, ChatService],
